@@ -151,7 +151,7 @@ textarea{min-height:76px;resize:vertical}
   @keyframes rise{from{transform:translateY(8px);opacity:.4}to{transform:none;opacity:1}}
 }
 /* --- sitio propio: música, invitación personal, canciones --- */
-.gate{position:fixed;inset:0;z-index:50;background:rgba(238,243,247,.97);display:grid;place-items:center;padding:24px 16px;text-align:center}
+.gate{position:fixed;inset:0;z-index:50;cursor:pointer;background:rgba(238,243,247,.97);display:grid;place-items:center;padding:24px 16px;text-align:center}
 .gate-card{max-width:420px;display:grid;gap:14px;justify-items:center}
 .gate .names{font-family:var(--f-script);color:var(--blue);font-size:clamp(3rem,13vw,4.4rem);line-height:1;margin:4px 0 6px}
 .gate .names .amp{color:var(--gold);font-size:.7em}
@@ -367,10 +367,9 @@ textarea{min-height:76px;resize:vertical}
   <div class="gate-card">
     <p class="eyebrow">Bienvenidos a la invitación de</p>
     <p class="names">Mili <span class="amp">&amp;</span> Pablo</p>
-    <p class="muted">La música es parte de la invitación</p>
+    <p class="muted">Subí el volumen 🎶</p>
     <div class="btns">
-      <button type="button" class="btn primary" id="gate-music">Ingresar con música</button>
-      <button type="button" class="btn" id="gate-silent">Ingresar sin música</button>
+      <button type="button" class="btn primary" id="gate-music">Abrir invitación</button>
     </div>
   </div>
 </div>
@@ -426,13 +425,14 @@ ytApi.onerror = () => { gate.hidden = true; document.body.style.overflow = ""; }
 document.head.appendChild(ytApi);
 gate.hidden = false;
 document.body.style.overflow = "hidden";
-function entrar(conMusica){
+// Los navegadores no dejan arrancar con sonido sin un toque: un toque en cualquier parte abre la invitación con música
+function entrar(){
+  if (gate.hidden) return;
   gate.hidden = true; document.body.style.overflow = "";
   toggle.hidden = false;
-  if (conMusica) sonar(); else setPlaying(false);
+  sonar();
 }
-$("gate-music").addEventListener("click", () => entrar(true));
-$("gate-silent").addEventListener("click", () => entrar(false));
+gate.addEventListener("click", entrar);
 toggle.addEventListener("click", () => {
   if (listo && player.getPlayerState() === YT.PlayerState.PLAYING){ quiereSonar = false; player.pauseVideo(); }
   else sonar();

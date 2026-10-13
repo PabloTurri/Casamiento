@@ -69,7 +69,7 @@ Si agregás invitados más adelante, volvé a usar "2. Generar links". A los que
 
 La música sale de un video de YouTube que suena de fondo, oculto. Es "Accidentally in Love" de Counting Crows (Shrek 2), versión oficial de la banda sonora (canal "Counting Crows - Topic").
 
-- Al entrar aparece "Ingresar con música / sin música" y después queda un botón flotante para pausar.
+- Al entrar aparece "Abrir invitación": con ese toque (en cualquier parte de la pantalla) entra con música. Los navegadores no dejan arrancar con sonido sin un toque, por eso existe esa pantalla. Después queda un botón flotante para pausar.
 - Para cambiar la canción, en `index.html` buscá `YOUTUBE_ID` y poné el código del video nuevo (lo que va después de `watch?v=` en el link de YouTube).
 
 > **Ojo con esto:** a veces YouTube pasa una publicidad antes del video, y se escucharía. No se puede evitar desde el sitio.
