@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mili & Pablo · 6 de febrero de 2027</title>
+<meta name="description" content="Invitación al casamiento de Mili y Pablo. Sábado 6 de febrero de 2027, Tandil.">
+<meta property="og:title" content="Mili & Pablo · ¡Nos casamos!">
+<meta property="og:description" content="Sábado 6 de febrero de 2027 · Tandil">
+<meta property="og:image" content="https://pabloturri.github.io/Casamiento/foto1.jpg">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: una columna angosta tipo tarjeta impresa, ramitas de eucalipto en acuarela solo arriba y entre secciones; foto al final.
+   Diseño de un solo tema (claro, como papel de invitación): todos los colores se fijan acá. */
+:root{
+  --paper:#fbfcfd;          /* papel */
+  --ink:#2f3a46;            /* texto principal, gris azulado */
+  --ink-soft:#5d6a78;       /* texto secundario */
+  --blue:#4f7aa3;           /* azul de los nombres */
+  --sky:#a9c6df;            /* celeste acuarela */
+  --sage:#9fb8a2;           /* verde salvia */
+  --gold:#b89458;           /* filetes dorados */
+  --line:#dfe6ec;
+  --card:#ffffff;
+  --f-script:"Pinyon Script","Great Vibes",cursive;
+  --f-serif:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;
+  --f-ui:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+[hidden]{display:none!important}
+html{background:#eef3f7}
+body{background:#eef3f7;color:var(--ink);font-family:var(--f-serif);font-size:19px;line-height:1.55;padding-inline:16px;padding-block:24px}
+.sheet{max-width:560px;margin:0 auto;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 1px 2px rgba(47,58,70,.06),0 12px 40px rgba(47,58,70,.08);padding-inline:clamp(20px,6vw,48px);padding-block:0 40px}
+section{padding-block:44px;text-align:center;position:relative}
+section+section{border-top:1px solid var(--line)}
+h2{font-family:var(--f-script);font-weight:400;color:var(--blue);font-size:2.6rem;line-height:1.1;margin:0 0 .4em;text-wrap:balance}
+.eyebrow{font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--ink-soft);margin:0}
+p{margin:0}
+.muted{color:var(--ink-soft)}
+
+/* Portada */
+.cover{padding-block:150px 56px}
+.sprig{position:absolute;pointer-events:none}
+.sprig.tl{top:-34px;left:-36px;width:250px;transform:rotate(-24deg)}
+.sprig.tr{top:-40px;right:-40px;width:230px;transform:scaleX(-1) rotate(-24deg)}
+.cover .names{font-family:var(--f-script);color:var(--blue);font-size:clamp(3.6rem,15vw,5.4rem);line-height:1;margin:.35em 0 .25em;font-weight:400}
+.cover .names .amp{color:var(--gold);font-size:.7em;margin-inline:.08em}
+.datebar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;margin:26px auto 0;max-width:380px}
+.datebar .side{font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--blue);border-block:1px solid var(--gold);padding-block:8px}
+.datebar .day{font-family:var(--f-serif);font-weight:600;font-size:3.4rem;line-height:1;color:var(--blue)}
+.datebar .month{grid-column:2;font-family:var(--f-ui);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:-6px}
+.place{margin-top:18px;font-style:italic;color:var(--ink-soft)}
+
+.quote{font-style:italic;font-size:1.3rem;max-width:30ch;margin-inline:auto;color:var(--ink)}
+.quote::before,.quote::after{content:"";display:block;width:40px;height:1px;background:var(--gold);margin:16px auto}
+
+/* Cuenta regresiva */
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:380px;margin:18px auto 0}
+.countdown div{display:flex;flex-direction:column;gap:2px}
+.countdown b{font-family:var(--f-serif);font-weight:500;font-size:2.3rem;line-height:1;color:var(--blue);font-variant-numeric:tabular-nums}
+.countdown span{font-family:var(--f-ui);font-size:.68rem;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-soft)}
+
+/* Invitados */
+.guestnames{font-size:1.35rem;margin-top:6px}
+.seats{font-family:var(--f-ui);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:10px}
+
+/* Eventos */
+.events{display:grid;gap:28px}
+.event{display:grid;gap:6px;justify-items:center}
+.event .icon{width:46px;height:46px;color:var(--sage)}
+.event h3{font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.24em;font-size:.82rem;font-weight:600;color:var(--blue);margin:4px 0 2px}
+.event .when{font-size:1.25rem}
+.event .where{font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:10px}
+.btn{font-family:var(--f-ui);font-size:.82rem;letter-spacing:.06em;text-decoration:none;color:var(--blue);border:1px solid var(--sky);background:var(--card);padding:9px 16px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:background .15s,border-color .15s}
+.btn:hover{background:#f1f6fa;border-color:var(--blue)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.btn.primary{background:var(--blue);color:#fff;border-color:var(--blue);font-size:.9rem;padding:13px 22px}
+.btn.primary:hover{background:#41698f}
+.btn svg{width:15px;height:15px}
+.divider{display:block;margin:30px auto 0;width:150px;height:auto;opacity:.95}
+
+.deadline{font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--gold);margin:-4px 0 12px}
+.dress{font-size:1.5rem;font-style:italic}
+
+/* Confirmación */
+form{text-align:left;display:grid;gap:18px;margin-top:22px}
+fieldset{border:1px solid var(--line);border-radius:10px;padding:16px;margin:0;display:grid;gap:12px;background:var(--card)}
+legend{font-family:var(--f-ui);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding-inline:6px}
+label{font-family:var(--f-ui);font-size:.92rem}
+.person{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;padding-block:10px;border-bottom:1px dashed var(--line)}
+.person.edit{grid-template-columns:1fr}
+.person .diet{grid-column:1/-1}
+.att{display:inline-flex;border:1px solid #cdd8e1;border-radius:999px;overflow:hidden;font-family:var(--f-ui);font-size:.8rem}
+.att button{border:0;background:#fff;color:var(--ink-soft);padding:7px 12px;cursor:pointer;font:inherit}
+.att button[aria-pressed=true]{background:var(--blue);color:#fff}
+.att button.no[aria-pressed=true]{background:#8a96a3}
+.person:last-child{border-bottom:0}
+.person .pname{font-family:var(--f-serif);font-size:1.15rem;font-weight:600}
+.person .diet{display:flex;flex-wrap:wrap;gap:8px}
+.person.off .pname{color:#9aa5b0;text-decoration:line-through}
+.person.off .diet{display:none}
+input[type=text],select,textarea{font-family:var(--f-ui);font-size:.95rem;color:var(--ink);border:1px solid #cdd8e1;border-radius:8px;padding:9px 11px;background:#fff;min-width:0;width:100%}
+select{width:auto;flex:1 1 170px}
+.diet input[type=text]{flex:1 1 170px}
+textarea{min-height:76px;resize:vertical}
+.lookup{display:grid;gap:6px}
+.after{display:grid;gap:18px}
+.found{text-align:center;padding-block:6px}
+.small-btn{font-size:.85rem;padding:9px 16px}
+.free-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.free-row button{border:0;background:none;color:var(--ink-soft);font-size:1.3rem;cursor:pointer;padding:4px 8px}
+.toggle-row{display:flex;flex-wrap:wrap;gap:10px}
+.choice{flex:1 1 180px;display:flex;align-items:center;gap:10px;border:1px solid #cdd8e1;border-radius:10px;padding:12px 14px;cursor:pointer;background:#fff}
+.choice:has(input:checked){border-color:var(--blue);background:#f1f6fa}
+.choice input{accent-color:var(--blue);width:18px;height:18px}
+.preview{font-family:var(--f-ui);font-size:.85rem;white-space:pre-wrap;background:#f4f7f9;border-radius:8px;padding:12px;color:var(--ink-soft);margin:0;overflow-wrap:anywhere}
+.small{font-family:var(--f-ui);font-size:.8rem;color:var(--ink-soft)}
+.err{font-family:var(--f-ui);font-size:.85rem;color:#a34a3f}
+.send{display:grid;gap:10px;justify-items:center;text-align:center}
+
+/* Regalo */
+.bank{display:grid;gap:10px;max-width:420px;margin:20px auto 0;text-align:left}
+.bank .row{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--card)}
+.bank .k{font-family:var(--f-ui);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);grid-column:1}
+.bank .v{font-family:var(--f-ui);font-size:1rem;color:var(--ink);font-variant-numeric:tabular-nums;overflow-wrap:anywhere;grid-column:1;min-width:0}
+.bank .row .btn{grid-column:2;grid-row:1/span 2;padding:7px 12px}
+
+/* Foto */
+.photo{margin:22px 0 0;display:grid;gap:10px}
+.photo img{width:100%;height:auto;border-radius:4px;display:block;box-shadow:0 6px 24px rgba(47,58,70,.12)}
+.closing .names{font-family:var(--f-script);color:var(--blue);font-size:3.2rem;line-height:1;margin-top:18px}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;font-family:var(--f-ui);font-size:.85rem;padding:10px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+
+@media (max-width:420px){
+  body{font-size:18px}
+  .cover{padding-block:120px 44px}
+  .sprig.tl{width:190px;top:-28px}.sprig.tr{width:175px;top:-32px}
+  .countdown b{font-size:1.9rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  .cover .names,.cover .eyebrow,.datebar{animation:rise .9s ease-out both}
+  .datebar{animation-delay:.15s}
+  @keyframes rise{from{transform:translateY(8px);opacity:.4}to{transform:none;opacity:1}}
+}
+/* --- sitio propio: música, invitación personal, canciones --- */
+.gate{position:fixed;inset:0;z-index:50;background:rgba(238,243,247,.97);display:grid;place-items:center;padding:24px 16px;text-align:center}
+.gate-card{max-width:420px;display:grid;gap:14px;justify-items:center}
+.gate .names{font-family:var(--f-script);color:var(--blue);font-size:clamp(3rem,13vw,4.4rem);line-height:1;margin:4px 0 6px}
+.gate .names .amp{color:var(--gold);font-size:.7em}
+.gate .btns{flex-direction:column;align-items:stretch;width:min(280px,100%)}
+.gate .btn{justify-content:center}
+.music-toggle{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:46px;height:46px;border-radius:50%;border:1px solid var(--sky);background:#fff;color:var(--blue);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 16px rgba(47,58,70,.15)}
+.music-toggle svg{width:20px;height:20px}
+.music-toggle.playing svg{animation:spin 6s linear infinite}
+@media (prefers-reduced-motion:reduce){.music-toggle.playing svg{animation:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.notice{font-family:var(--f-ui);font-size:.88rem;background:#f1f6fa;border:1px solid var(--sky);border-radius:10px;padding:12px 14px;color:var(--ink);text-align:center}
+.ok{display:grid;gap:12px;justify-items:center;margin-top:18px}
+.ok .big{font-family:var(--f-script);color:var(--blue);font-size:2.4rem;line-height:1}
+.song-form{display:grid;gap:12px;margin-top:20px;text-align:left}
+.song-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:420px){.song-row{grid-template-columns:1fr}}
+.song-ok{font-family:var(--f-ui);font-size:.9rem;color:#4d7a58;text-align:center}
+.btn[disabled]{opacity:.6;cursor:default}
+.music-icon{width:46px;height:46px;color:var(--sage);margin:0 auto 6px;display:block}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="wc" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5"/>
+    </filter>
+    <!-- ramita de eucalipto -->
+    <symbol id="eucalyptus" viewBox="0 0 240 200">
+      <g filter="url(#wc)">
+        <path d="M10 18 C70 40 120 80 210 178" fill="none" stroke="#8aa58f" stroke-width="2.2" stroke-linecap="round"/>
+        <g fill="#a9c6df" fill-opacity=".72">
+          <ellipse cx="38" cy="22" rx="16" ry="12"/><ellipse cx="62" cy="54" rx="17" ry="13"/>
+          <ellipse cx="98" cy="62" rx="18" ry="14"/><ellipse cx="118" cy="104" rx="17" ry="13"/>
+          <ellipse cx="156" cy="112" rx="16" ry="12"/><ellipse cx="170" cy="150" rx="14" ry="11"/>
+        </g>
+        <g fill="#9fb8a2" fill-opacity=".8">
+          <ellipse cx="60" cy="30" rx="13" ry="10"/><ellipse cx="84" cy="46" rx="11" ry="9"/>
+          <ellipse cx="136" cy="88" rx="13" ry="10"/><ellipse cx="192" cy="160" rx="11" ry="9"/>
+          <ellipse cx="96" cy="88" rx="10" ry="8"/>
+        </g>
+        <g fill="#7f9fbd" fill-opacity=".35">
+          <ellipse cx="44" cy="26" rx="7" ry="5"/><ellipse cx="104" cy="66" rx="8" ry="6"/><ellipse cx="160" cy="116" rx="7" ry="5"/>
+        </g>
+        <g fill="#b89458" fill-opacity=".55">
+          <circle cx="24" cy="48" r="1.6"/><circle cx="140" cy="60" r="1.3"/><circle cx="74" cy="92" r="1.1"/><circle cx="200" cy="130" r="1.4"/>
+        </g>
+      </g>
+    </symbol>
+    <symbol id="tiny" viewBox="0 0 150 30">
+      <path d="M8 15 H62 M88 15 H142" stroke="#b89458" stroke-width="1"/>
+      <g filter="url(#wc)">
+        <ellipse cx="68" cy="13" rx="7" ry="4.5" fill="#9fb8a2" fill-opacity=".85" transform="rotate(-25 68 13)"/>
+        <ellipse cx="82" cy="13" rx="7" ry="4.5" fill="#a9c6df" fill-opacity=".85" transform="rotate(25 82 13)"/>
+        <circle cx="75" cy="18" r="2.2" fill="#b89458" fill-opacity=".7"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<main class="sheet">
+  <svg class="sprig tl" viewBox="0 0 240 200" aria-hidden="true"><use href="#eucalyptus"/></svg>
+  <svg class="sprig tr" viewBox="0 0 240 200" aria-hidden="true"><use href="#eucalyptus"/></svg>
+
+  <section class="cover" aria-label="Portada">
+    <p class="eyebrow">¡Nos casamos!</p>
+    <h1 class="names">Mili <span class="amp">&amp;</span> Pablo</h1>
+    <div class="datebar" aria-label="Sábado 6 de febrero de 2027">
+      <span class="side">Sábado</span>
+      <span class="day">6</span>
+      <span class="side">2027</span>
+      <span class="month">Febrero</span>
+    </div>
+    <p class="place">Tandil</p>
+  </section>
+
+  <section aria-label="Frase">
+    <!-- Espacio para la frase: cambiar el texto de abajo -->
+    <p class="quote">Nos casamos y queremos festejarlo con vos.</p>
+  </section>
+
+  <section aria-labelledby="cd-t">
+    <p class="eyebrow" id="cd-t">Faltan</p>
+    <div class="countdown" id="countdown" aria-live="off">
+      <div><b id="cd-d">–</b><span>días</span></div>
+      <div><b id="cd-h">–</b><span>horas</span></div>
+      <div><b id="cd-m">–</b><span>min</span></div>
+      <div><b id="cd-s">–</b><span>seg</span></div>
+    </div>
+  </section>
+
+
+
+  <section id="inv-section" aria-labelledby="g-t" hidden>
+    <p class="eyebrow" id="g-t">Esta invitación es para</p>
+    <p class="guestnames" id="inv-names"></p>
+    <p class="seats" id="inv-seats"></p>
+  </section>
+
+  <section aria-labelledby="ev-t">
+    <h2 id="ev-t">El gran día</h2>
+    <div class="events">
+      <div class="event">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 4v8M20 8h8M14 22l10-8 10 8M16 20v22h16V20M10 42h28M21 42v-8a3 3 0 0 1 6 0v8"/></svg>
+        <h3>Ceremonia</h3>
+        <p class="when">Sábado 6 de febrero · 19 hs</p>
+        <p class="where">Capilla Nuestra Señora de Guadalupe</p>
+        <p class="muted">Chile 951, Tandil</p>
+        <div class="btns">
+          <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Casamiento%20Mili%20y%20Pablo%20%C2%B7%20Ceremonia&amp;dates=20270206T220000Z%2F20270206T230000Z&amp;location=Capilla%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe%2C%20Chile%20951%2C%20Tandil&amp;details=Ceremonia%20del%20casamiento%20de%20Mili%20y%20Pablo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 6.5h12M5 1.5v3M11 1.5v3"/></svg>Agendar</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Capilla%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe%2C%20Chile%20951%2C%20Tandil"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 14.5s5-4.6 5-8.5a5 5 0 0 0-10 0c0 3.9 5 8.5 5 8.5z"/><circle cx="8" cy="6" r="1.8"/></svg>¿Cómo llegar?</a>
+        </div>
+      </div>
+
+      <svg class="divider" viewBox="0 0 150 30" aria-hidden="true"><use href="#tiny"/></svg>
+
+      <div class="event">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6h8l-1 12a3 3 0 0 1-6 0zM26 6h8l-1 12a3 3 0 0 1-6 0zM18 21v16M30 21v16M13 37h10M25 37h10M31 3l3-3M17 3l-3-3"/></svg>
+        <h3>Fiesta</h3>
+        <p class="when">Sábado 6 de febrero · 21 hs</p>
+        <p class="where">Espacio Provincia</p>
+        <p class="muted">Calihue 20, Tandil</p>
+        <div class="btns">
+          <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Casamiento%20Mili%20y%20Pablo%20%C2%B7%20Fiesta&amp;dates=20270207T000000Z%2F20270207T070000Z&amp;location=Espacio%20Provincia%2C%20Calihue%2020%2C%20Tandil&amp;details=Fiesta%20del%20casamiento%20de%20Mili%20y%20Pablo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 6.5h12M5 1.5v3M11 1.5v3"/></svg>Agendar</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/3kDkTK1UCiHaPwfW8"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 14.5s5-4.6 5-8.5a5 5 0 0 0-10 0c0 3.9 5 8.5 5 8.5z"/><circle cx="8" cy="6" r="1.8"/></svg>¿Cómo llegar?</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="dc-t">
+    <p class="eyebrow" id="dc-t">Dress code</p>
+    <p class="dress">Elegante formal</p>
+  </section>
+
+
+  <section id="rsvp" aria-labelledby="rsvp-t">
+    <h2 id="rsvp-t">Confirmá tu asistencia</h2>
+    <p class="deadline">Antes del 15 de enero</p>
+
+    <p class="notice" id="rsvp-sin">Para confirmar, abrí el link personal que te mandamos por WhatsApp.</p>
+    <p class="muted" id="rsvp-cargando" hidden>Cargando tu invitación…</p>
+    <p class="err" id="rsvp-load-err" hidden></p>
+
+    <form id="rsvp-form" novalidate hidden>
+      <p class="notice" id="rsvp-previa" hidden></p>
+      <div class="toggle-row" role="radiogroup" aria-label="¿Vienen?">
+        <label class="choice"><input type="radio" name="vienen" id="r-si" value="si" checked> Sí, vamos</label>
+        <label class="choice"><input type="radio" name="vienen" id="r-no" value="no"> No vamos a poder ir</label>
+      </div>
+
+      <fieldset id="people-set">
+        <legend>¿Quiénes van?</legend>
+        <div id="people"></div>
+      </fieldset>
+
+      <div>
+        <label for="msg">Mensaje para los novios (opcional)</label>
+        <textarea id="msg" maxlength="500" placeholder="Algo que quieras decirnos"></textarea>
+      </div>
+
+      <p class="err" id="err" hidden></p>
+      <div class="send">
+        <button type="submit" class="btn primary" id="rsvp-btn">Enviar confirmación</button>
+      </div>
+    </form>
+
+    <div class="ok" id="rsvp-ok" hidden>
+      <p class="big">¡Gracias!</p>
+      <p id="rsvp-ok-txt">Recibimos tu respuesta.</p>
+      <button type="button" class="btn" id="rsvp-edit">Modificar respuesta</button>
+    </div>
+  </section>
+
+  <section id="musica" aria-labelledby="mu-t">
+    <svg class="music-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 36V10l20-4v26"/><circle cx="13" cy="36" r="5"/><circle cx="33" cy="32" r="5"/><path d="M18 17l20-4"/></svg>
+    <h2 id="mu-t">¿Qué canción no puede faltar?</h2>
+    <p class="muted">Ayudanos a armar la playlist de la fiesta.</p>
+    <form class="song-form" id="song-form" novalidate>
+      <div class="song-row">
+        <div><label for="song">Canción</label><input type="text" id="song" maxlength="120" placeholder="Nombre de la canción"></div>
+        <div><label for="artist">Artista</label><input type="text" id="artist" maxlength="120" placeholder="Quién la canta"></div>
+      </div>
+      <p class="err" id="song-err" hidden></p>
+      <p class="song-ok" id="song-ok" hidden>¡Anotada! Si querés, sugerí otra.</p>
+      <div class="send"><button type="submit" class="btn primary" id="song-btn">Sugerir canción</button></div>
+    </form>
+  </section>
+
+  <section aria-labelledby="gift-t">
+    <h2 id="gift-t">Luna de miel</h2>
+    <p>Tu presencia es nuestro mejor regalo.<br>Si querés colaborar con nuestra luna de miel, podés hacerlo acá:</p>
+    <div class="bank">
+      <div class="row"><span class="k">Alias</span><span class="v">casamiento.mili.pablo</span><button type="button" class="btn" data-copy="casamiento.mili.pablo">Copiar</button></div>
+      <div class="row"><span class="k">CVU</span><span class="v">0000003100002968678402</span><button type="button" class="btn" data-copy="0000003100002968678402">Copiar</button></div>
+      <div class="row"><span class="k">Titular</span><span class="v">Pablo Turri</span><button type="button" class="btn" data-copy="Pablo Turri">Copiar</button></div>
+    </div>
+  </section>
+
+  <section class="closing" aria-label="Foto">
+    <p class="eyebrow">Te esperamos</p>
+    <figure class="photo">
+      <img src="foto1.jpg" alt="Mili y Pablo sonriendo frente al mar al atardecer" width="1024" height="768">
+    </figure>
+    <p class="names">Mili &amp; Pablo</p>
+    <svg class="divider" viewBox="0 0 150 30" aria-hidden="true"><use href="#tiny"/></svg>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status"></div>
+<div class="gate" id="gate" hidden>
+  <div class="gate-card">
+    <p class="eyebrow">Bienvenidos a la invitación de</p>
+    <p class="names">Mili <span class="amp">&amp;</span> Pablo</p>
+    <p class="muted">La música es parte de la invitación</p>
+    <div class="btns">
+      <button type="button" class="btn primary" id="gate-music">Ingresar con música</button>
+      <button type="button" class="btn" id="gate-silent">Ingresar sin música</button>
+    </div>
+  </div>
+</div>
+<button type="button" class="music-toggle" id="music-toggle" aria-label="Pausar música" hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+</button>
+<audio id="audio" src="musica.mp3" loop preload="none"></audio>
+
+<script>
+/* ================= CONFIGURACIÓN =================
+   API_URL: la URL de la "Aplicación web" de Apps Script (termina en /exec).
+   Ver LEEME.md, paso 3. */
+const API_URL = "PEGAR_ACA_LA_URL_DE_APPS_SCRIPT";
+const FECHA_CEREMONIA = new Date("2027-02-06T19:00:00-03:00");
+/* ================================================= */
+
+const $ = id => document.getElementById(id);
+const apiLista = /^https:\/\/script\.google\.com\//.test(API_URL);
+
+/* ===== Cuenta regresiva ===== */
+const pad = n => String(n).padStart(2, "0");
+function tick(){
+  let ms = FECHA_CEREMONIA - Date.now();
+  if (ms < 0) ms = 0;
+  const s = Math.floor(ms/1000);
+  $("cd-d").textContent = Math.floor(s/86400);
+  $("cd-h").textContent = pad(Math.floor(s%86400/3600));
+  $("cd-m").textContent = pad(Math.floor(s%3600/60));
+  $("cd-s").textContent = pad(s%60);
+}
+tick(); setInterval(tick, 1000);
+
+/* ===== Música ===== */
+const audio = $("audio"), gate = $("gate"), toggle = $("music-toggle");
+function setPlaying(p){ toggle.classList.toggle("playing", p); toggle.setAttribute("aria-label", p ? "Pausar música" : "Reproducir música"); }
+fetch("musica.mp3", { method: "HEAD" }).then(r => {
+  if (!r.ok) return;
+  gate.hidden = false;
+  document.body.style.overflow = "hidden";
+}).catch(() => {});
+function entrar(conMusica){
+  gate.hidden = true; document.body.style.overflow = "";
+  toggle.hidden = false;
+  if (conMusica){ audio.play().then(() => setPlaying(true)).catch(() => setPlaying(false)); }
+  else setPlaying(false);
+}
+$("gate-music").addEventListener("click", () => entrar(true));
+$("gate-silent").addEventListener("click", () => entrar(false));
+toggle.addEventListener("click", () => {
+  if (audio.paused) audio.play().then(() => setPlaying(true)).catch(() => {});
+  else { audio.pause(); setPlaying(false); }
+});
+
+/* ===== API ===== */
+async function apiGet(params){
+  const r = await fetch(API_URL + "?" + new URLSearchParams(params));
+  return r.json();
+}
+async function apiPost(data){
+  // text/plain evita el "preflight" de CORS; Apps Script lo lee igual
+  const r = await fetch(API_URL, { method: "POST", body: JSON.stringify(data) });
+  return r.json();
+}
+
+/* ===== Invitación personal ===== */
+const clave = new URLSearchParams(location.search).get("i") || "";
+let grupo = null;  // { clave, grupo, integrantes:[], respuesta }
+const DIETAS = ["Sin restricciones","Vegetariano/a","Vegano/a","Celíaco/a (sin TACC)","Otra"];
+const peopleEl = $("people");
+
+function listaNatural(arr){
+  if (arr.length <= 1) return arr.join("");
+  return arr.slice(0,-1).join(", ") + " y " + arr[arr.length-1];
+}
+
+function personRow(nombre, idx, previo){
+  const row = document.createElement("div");
+  row.className = "person";
+  let va = previo ? previo.va : true;
+  const nameEl = document.createElement("span");
+  nameEl.className = "pname"; nameEl.textContent = nombre;
+  const att = document.createElement("div");
+  att.className = "att"; att.setAttribute("role","group"); att.setAttribute("aria-label","¿" + nombre + " va?");
+  const bSi = document.createElement("button"); bSi.type="button"; bSi.textContent="Va";
+  const bNo = document.createElement("button"); bNo.type="button"; bNo.textContent="No va"; bNo.className="no";
+  const pintar = () => { bSi.setAttribute("aria-pressed", va); bNo.setAttribute("aria-pressed", !va); row.classList.toggle("off", !va); };
+  bSi.addEventListener("click", () => { va = true; pintar(); });
+  bNo.addEventListener("click", () => { va = false; pintar(); });
+  att.append(bSi, bNo);
+  const diet = document.createElement("div");
+  diet.className = "diet";
+  const sel = document.createElement("select");
+  sel.id = "pd-"+idx; sel.setAttribute("aria-label","Restricción alimentaria de " + nombre);
+  DIETAS.forEach(d => { const o=document.createElement("option"); o.textContent=d; sel.appendChild(o); });
+  const otra = document.createElement("input");
+  otra.type="text"; otra.id="po-"+idx; otra.maxLength=80; otra.placeholder="¿Cuál?"; otra.hidden = true;
+  if (previo && previo.dieta){
+    if (DIETAS.includes(previo.dieta)) sel.value = previo.dieta;
+    else { sel.value = "Otra"; otra.hidden = false; otra.value = previo.dieta.replace(/^Otra:\s*/,""); }
+  }
+  sel.addEventListener("change", () => { otra.hidden = sel.value !== "Otra"; });
+  diet.append(sel, otra);
+  row.append(nameEl, att, diet);
+  pintar();
+  row._get = () => ({ nombre, va, dieta: sel.value === "Otra" ? ("Otra: " + (otra.value.trim() || "sin especificar")) : sel.value });
+  return row;
+}
+
+function armarFormulario(){
+  const prev = grupo.respuesta;
+  const porNombre = {};
+  (prev && prev.personas || []).forEach(p => porNombre[p.nombre] = p);
+  peopleEl.replaceChildren(...grupo.integrantes.map((n,i) => personRow(n, i, porNombre[n])));
+  $("r-si").checked = !prev || prev.asiste;
+  $("r-no").checked = !!prev && !prev.asiste;
+  $("msg").value = prev && prev.mensaje || "";
+  $("people-set").hidden = !$("r-si").checked;
+  if (prev){
+    $("rsvp-previa").textContent = "Ya nos respondieron el " + prev.fecha + ". Si cambió algo, modificalo y volvé a enviar.";
+    $("rsvp-previa").hidden = false;
+  }
+}
+
+async function cargarInvitacion(){
+  if (!clave) return;
+  $("rsvp-sin").hidden = true;
+  if (!apiLista){ $("rsvp-load-err").textContent = "La confirmación todavía no está conectada a la planilla."; $("rsvp-load-err").hidden = false; return; }
+  $("rsvp-cargando").hidden = false;
+  try {
+    const res = await apiGet({ i: clave });
+    $("rsvp-cargando").hidden = true;
+    if (!res.ok){ throw new Error(res.error || "no encontrada"); }
+    grupo = res;
+    $("inv-names").textContent = listaNatural(grupo.integrantes);
+    const n = grupo.integrantes.length;
+    $("inv-seats").textContent = n === 1 ? "1 lugar reservado" : n + " lugares reservados";
+    $("inv-section").hidden = false;
+    armarFormulario();
+    $("rsvp-form").hidden = false;
+  } catch (e) {
+    $("rsvp-cargando").hidden = true;
+    $("rsvp-load-err").textContent = "No pudimos cargar tu invitación. Revisá que el link esté completo o escribinos al 249 449-5025.";
+    $("rsvp-load-err").hidden = false;
+  }
+}
+
+document.querySelectorAll('input[name="vienen"]').forEach(r => r.addEventListener("change", () => {
+  $("people-set").hidden = !$("r-si").checked;
+}));
+
+$("rsvp-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = $("err"); err.hidden = true;
+  const asiste = $("r-si").checked;
+  const personas = asiste ? [...peopleEl.children].map(r => r._get()) : grupo.integrantes.map(n => ({ nombre: n, va: false, dieta: "" }));
+  if (asiste && !personas.some(p => p.va)){
+    err.textContent = "Marcá al menos a una persona que va, o elegí “No vamos a poder ir”."; err.hidden = false; return;
+  }
+  const btn = $("rsvp-btn"); btn.disabled = true; btn.textContent = "Enviando…";
+  try {
+    const res = await apiPost({ action: "rsvp", clave, asiste, personas, mensaje: $("msg").value.trim() });
+    if (!res.ok) throw new Error(res.error);
+    grupo.respuesta = res.respuesta;
+    const van = personas.filter(p => p.va).map(p => p.nombre);
+    $("rsvp-ok-txt").textContent = asiste
+      ? "Confirmaste a " + listaNatural(van) + ". ¡Nos vemos el 6 de febrero!"
+      : "Lamentamos que no puedan venir. Gracias por avisarnos.";
+    $("rsvp-form").hidden = true; $("rsvp-ok").hidden = false;
+  } catch (e2) {
+    err.textContent = "No se pudo enviar. Probá de nuevo en un momento o escribinos al 249 449-5025."; err.hidden = false;
+  } finally { btn.disabled = false; btn.textContent = "Enviar confirmación"; }
+});
+$("rsvp-edit").addEventListener("click", () => {
+  armarFormulario(); $("rsvp-ok").hidden = true; $("rsvp-form").hidden = false;
+});
+
+/* ===== Canciones ===== */
+$("song-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = $("song-err"), ok = $("song-ok"); err.hidden = true; ok.hidden = true;
+  const cancion = $("song").value.trim(), artista = $("artist").value.trim();
+  if (!cancion){ err.textContent = "Escribí el nombre de la canción."; err.hidden = false; return; }
+  if (!apiLista){ err.textContent = "Las sugerencias todavía no están conectadas a la planilla."; err.hidden = false; return; }
+  const btn = $("song-btn"); btn.disabled = true; btn.textContent = "Enviando…";
+  try {
+    const res = await apiPost({ action: "cancion", clave, cancion, artista });
+    if (!res.ok) throw new Error(res.error);
+    $("song").value = ""; $("artist").value = ""; ok.hidden = false;
+  } catch (e2) {
+    err.textContent = "No se pudo enviar. Probá de nuevo en un momento."; err.hidden = false;
+  } finally { btn.disabled = false; btn.textContent = "Sugerir canción"; }
+});
+
+cargarInvitacion();
+
+/* ===== Copiar ===== */
+const toast = $("toast");
+function aviso(t){ toast.textContent = t; toast.classList.add("show"); clearTimeout(aviso._t); aviso._t = setTimeout(() => toast.classList.remove("show"), 1800); }
+function copiar(texto, el){
+  const fallback = () => {
+    const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    aviso("Seleccionado: copialo con el menú");
+  };
+  try { navigator.clipboard.writeText(texto).then(() => aviso("Copiado"), fallback); } catch(_) { fallback(); }
+}
+document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => copiar(b.dataset.copy, b.parentElement.querySelector(".v"))));
+</script>
+</body>
+</html>
