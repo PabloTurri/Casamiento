@@ -151,10 +151,12 @@ textarea{min-height:76px;resize:vertical}
   @keyframes rise{from{transform:translateY(8px);opacity:.4}to{transform:none;opacity:1}}
 }
 /* --- sitio propio: música, invitación personal, canciones --- */
-.gate{position:fixed;inset:0;z-index:50;cursor:pointer;background:rgba(238,243,247,.97);display:grid;place-items:center;padding:24px 16px;text-align:center}
+.gate{position:fixed;inset:0;z-index:50;cursor:pointer;background:#eef3f7;display:grid;place-items:center;padding:24px 16px;text-align:center}
 .gate-card{max-width:420px;display:grid;gap:14px;justify-items:center}
 .gate .names{font-family:var(--f-script);color:var(--blue);font-size:clamp(3rem,13vw,4.4rem);line-height:1;margin:4px 0 6px}
 .gate .names .amp{color:var(--gold);font-size:.7em}
+.gate .arco{width:min(300px,82vw);height:auto;margin-bottom:-18px;overflow:visible}
+.gate .arco text{font-family:var(--f-ui);text-transform:uppercase;letter-spacing:.3em;font-size:15px;fill:var(--gold)}
 .gate .btns{flex-direction:column;align-items:stretch;width:min(280px,100%)}
 .gate .btn{justify-content:center}
 .music-toggle{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:46px;height:46px;border-radius:50%;border:1px solid var(--sky);background:#fff;color:var(--blue);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 16px rgba(47,58,70,.15)}
@@ -365,6 +367,10 @@ textarea{min-height:76px;resize:vertical}
 <div class="toast" id="toast" role="status"></div>
 <div class="gate" id="gate" hidden>
   <div class="gate-card">
+    <svg class="arco" viewBox="0 0 300 80" role="img" aria-label="¡Nos casamos!">
+      <path id="arco-path" d="M 30 75 A 140 140 0 0 1 270 75" fill="none"/>
+      <text><textPath href="#arco-path" startOffset="50%" text-anchor="middle">¡Nos casamos!</textPath></text>
+    </svg>
     <p class="names">Mili <span class="amp">&amp;</span> Pablo</p>
     <div class="btns">
       <button type="button" class="btn primary" id="gate-music">Abrir invitación</button>
@@ -427,7 +433,6 @@ document.body.style.overflow = "hidden";
 function entrar(){
   if (gate.hidden) return;
   gate.hidden = true; document.body.style.overflow = "";
-  toggle.hidden = false;
   sonar();
 }
 gate.addEventListener("click", entrar);
