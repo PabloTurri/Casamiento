@@ -67,7 +67,7 @@ Si agregás invitados más adelante, volvé a usar "2. Generar links". A los que
 
 ## Música
 
-La música sale de un video de YouTube que suena de fondo, oculto. Por defecto es "Can't Help Falling in Love" de Elvis (video oficial de ElvisPresleyVEVO).
+La música sale de un video de YouTube que suena de fondo, oculto. Es "Accidentally in Love" de Counting Crows (Shrek 2), versión oficial de la banda sonora (canal "Counting Crows - Topic").
 
 - Al entrar aparece "Ingresar con música / sin música" y después queda un botón flotante para pausar.
 - Para cambiar la canción, en `index.html` buscá `YOUTUBE_ID` y poné el código del video nuevo (lo que va después de `watch?v=` en el link de YouTube).
