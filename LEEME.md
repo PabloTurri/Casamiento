@@ -2,7 +2,7 @@
 
 Hay dos partes:
 
-- **El sitio** (`index.html`, `foto1.jpg`, `musica.mp3`), que se publica gratis en GitHub Pages.
+- **El sitio** (`index.html`, `foto1.jpg`), que se publica gratis en GitHub Pages.
 - **La planilla de Google** con el script `apps-script/Code.gs`. Es donde cargás los invitados y donde caen las confirmaciones y las canciones.
 
 Seguí los pasos en orden. Lleva unos 15 minutos.
@@ -46,7 +46,7 @@ Completá solo esas dos columnas. Las demás se llenan solas.
 
 1. Si no tenés cuenta en github.com, creá una gratis.
 2. El repositorio ya está creado: `PabloTurri/Casamiento`. Tiene que ser **público**. Las Pages gratis requieren que el repo sea público. La lista de invitados no queda expuesta, porque vive en tu planilla y no en el repo.
-3. Tocá **Add file → Upload files** y subí `index.html`, `foto1.jpg` y `musica.mp3`.
+3. Tocá **Add file → Upload files** y subí `index.html` y `foto1.jpg`.
 4. En **Settings → Pages**, en "Branch" elegí `main` y la carpeta `/ (root)`. Tocá **Save**.
 5. En uno o dos minutos el sitio queda en `https://pabloturri.github.io/Casamiento/` (la C mayúscula importa).
 6. La dirección del sitio ya está cargada en `Code.gs` y en `index.html`, no hace falta tocarla.
@@ -67,12 +67,12 @@ Si agregás invitados más adelante, volvé a usar "2. Generar links". A los que
 
 ## Música
 
-El sitio busca un archivo `musica.mp3` al lado de `index.html`:
+La música sale de un video de YouTube que suena de fondo, oculto. Por defecto es "Can't Help Falling in Love" de Elvis (video oficial de ElvisPresleyVEVO).
 
-- **Si está:** muestra la pantalla "Ingresar con música / sin música" y un botón flotante para pausar.
-- **Si no está:** la invitación entra directo, sin música.
+- Al entrar aparece "Ingresar con música / sin música" y después queda un botón flotante para pausar.
+- Para cambiar la canción, en `index.html` buscá `YOUTUBE_ID` y poné el código del video nuevo (lo que va después de `watch?v=` en el link de YouTube).
 
-> **Ojo con esto:** "Can't Help Falling in Love" es una grabación con derechos de autor. En un repo público, GitHub puede recibir un reclamo y bajar el archivo. Es poco probable en una invitación personal, pero puede pasar.
+> **Ojo con esto:** a veces YouTube pasa una publicidad antes del video, y se escucharía. No se puede evitar desde el sitio.
 
 ## Probar antes de mandar
 
