@@ -49,7 +49,7 @@ function generarLinks() {
   if (n < 1) return;
   const datos = sh.getRange(2, 1, n, COLS_INV.length).getValues();
   const usadas = new Set(datos.map(r => String(r[C.CLAVE])).filter(Boolean));
-  let nuevos = 0;
+  let nuevos = 0, limpiados = 0;
   datos.forEach((r, i) => {
     if (!String(r[C.INTEG]).trim()) return;
     if (!r[C.CLAVE]) {
@@ -61,9 +61,21 @@ function generarLinks() {
       nuevos++;
     }
     sh.getRange(i + 2, C.LINK + 1).setValue(BASE_URL + '?i=' + r[C.CLAVE]);
-    if (!r[C.ESTADO]) sh.getRange(i + 2, C.ESTADO + 1).setValue('Pendiente');
+    // Si en el renglón quedó la respuesta de otro grupo (por ejemplo, de una fila de prueba borrada), se limpia
+    if (r[C.DATOS] && !respuestaDe(r[C.DATOS], r[C.CLAVE])) {
+      sh.getRange(i + 2, C.ESTADO + 1, 1, 5).setValues([['Pendiente', '', '', '', '']]);
+      limpiados++;
+    } else if (!r[C.ESTADO]) sh.getRange(i + 2, C.ESTADO + 1).setValue('Pendiente');
   });
-  SpreadsheetApp.getUi().alert('Links listos (' + nuevos + ' nuevos). Copiá el de cada grupo de la columna "Link".');
+  SpreadsheetApp.getUi().alert('Links listos (' + nuevos + ' nuevos' + (limpiados ? ', ' + limpiados + ' con respuestas viejas limpiadas' : '') + '). Copiá el de cada grupo de la columna "Link".');
+}
+
+// Devuelve la respuesta guardada solo si pertenece a esa clave
+function respuestaDe(datos, clave) {
+  try {
+    const r = JSON.parse(datos);
+    return r && r.clave === String(clave) ? r : null;
+  } catch (err) { return null; }
 }
 
 function claveAleatoria() {
@@ -99,8 +111,7 @@ function doGet(e) {
   const clave = (e.parameter.i || '').trim();
   const f = buscarFila(clave);
   if (!f) return json({ ok: false, error: 'no_encontrada' });
-  let respuesta = null;
-  try { respuesta = f.valores[C.DATOS] ? JSON.parse(f.valores[C.DATOS]) : null; } catch (err) {}
+  const respuesta = f.valores[C.DATOS] ? respuestaDe(f.valores[C.DATOS], clave) : null;
   return json({ ok: true, clave, grupo: f.valores[C.GRUPO], integrantes: integrantesDe(f.valores), respuesta });
 }
 
@@ -147,7 +158,7 @@ function guardarRsvp(d) {
     van.map(p => p.nombre).join(', '), noVan.map(p => p.nombre).join(', '), dietas, mensaje
   ]);
 
-  const respuesta = { asiste: van.length > 0, personas, mensaje, fecha: fechaTxt };
+  const respuesta = { clave: String(d.clave), asiste: van.length > 0, personas, mensaje, fecha: fechaTxt };
   const estado = van.length === 0 ? 'No va' : (van.length === integrantes.length ? 'Confirmado' : 'Confirmado parcial');
   f.sh.getRange(f.fila, C.ESTADO + 1, 1, 5).setValues([[
     estado, van.length + ' de ' + integrantes.length, dietas, ahora, JSON.stringify(respuesta)
