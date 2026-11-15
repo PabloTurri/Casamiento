@@ -150,7 +150,7 @@ textarea{min-height:76px;resize:vertical}
   .datebar{animation-delay:.15s}
   @keyframes rise{from{transform:translateY(8px);opacity:.4}to{transform:none;opacity:1}}
 }
-/* --- sitio propio: música, invitación personal, canciones --- */
+/* --- sitio propio: música, invitación personal --- */
 .gate{position:fixed;inset:0;z-index:50;cursor:pointer;background:#eef3f7;display:grid;place-items:center;padding:24px 16px;text-align:center}
 .gate-card{max-width:420px;display:grid;gap:14px;justify-items:center}
 .gate .names{font-family:var(--f-script);color:var(--blue);font-size:clamp(3rem,13vw,4.4rem);line-height:1;margin:4px 0 6px}
@@ -167,12 +167,7 @@ textarea{min-height:76px;resize:vertical}
 .notice{font-family:var(--f-ui);font-size:.88rem;background:#f1f6fa;border:1px solid var(--sky);border-radius:10px;padding:12px 14px;color:var(--ink);text-align:center}
 .ok{display:grid;gap:12px;justify-items:center;margin-top:18px}
 .ok .big{font-family:var(--f-script);color:var(--blue);font-size:2.4rem;line-height:1}
-.song-form{display:grid;gap:12px;margin-top:20px;text-align:left}
-.song-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media (max-width:420px){.song-row{grid-template-columns:1fr}}
-.song-ok{font-family:var(--f-ui);font-size:.9rem;color:#4d7a58;text-align:center}
 .btn[disabled]{opacity:.6;cursor:default}
-.music-icon{width:46px;height:46px;color:var(--sage);margin:0 auto 6px;display:block}
 </style>
 </head>
 <body>
@@ -260,11 +255,11 @@ textarea{min-height:76px;resize:vertical}
       <div class="event">
         <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 4v8M20 8h8M14 22l10-8 10 8M16 20v22h16V20M10 42h28M21 42v-8a3 3 0 0 1 6 0v8"/></svg>
         <h3>Ceremonia</h3>
-        <p class="when">Sábado 6 de febrero · 19 hs</p>
+        <p class="when">Sábado 6 de febrero · 18:30 hs</p>
         <p class="where">Capilla Nuestra Señora de Guadalupe</p>
         <p class="muted">Chile 951, Tandil</p>
         <div class="btns">
-          <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Casamiento%20Mili%20y%20Pablo%20%C2%B7%20Ceremonia&amp;dates=20270206T220000Z%2F20270206T230000Z&amp;location=Capilla%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe%2C%20Chile%20951%2C%20Tandil&amp;details=Ceremonia%20del%20casamiento%20de%20Mili%20y%20Pablo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 6.5h12M5 1.5v3M11 1.5v3"/></svg>Agendar</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Casamiento%20Mili%20y%20Pablo%20%C2%B7%20Ceremonia&amp;dates=20270206T213000Z%2F20270206T223000Z&amp;location=Capilla%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe%2C%20Chile%20951%2C%20Tandil&amp;details=Ceremonia%20del%20casamiento%20de%20Mili%20y%20Pablo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 6.5h12M5 1.5v3M11 1.5v3"/></svg>Agendar</a>
           <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Capilla%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe%2C%20Chile%20951%2C%20Tandil"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 14.5s5-4.6 5-8.5a5 5 0 0 0-10 0c0 3.9 5 8.5 5 8.5z"/><circle cx="8" cy="6" r="1.8"/></svg>¿Cómo llegar?</a>
         </div>
       </div>
@@ -274,11 +269,11 @@ textarea{min-height:76px;resize:vertical}
       <div class="event">
         <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6h8l-1 12a3 3 0 0 1-6 0zM26 6h8l-1 12a3 3 0 0 1-6 0zM18 21v16M30 21v16M13 37h10M25 37h10M31 3l3-3M17 3l-3-3"/></svg>
         <h3>Fiesta</h3>
-        <p class="when">Sábado 6 de febrero · 21 hs</p>
+        <p class="when">Sábado 6 de febrero · A continuación de la iglesia</p>
         <p class="where">Espacio Provincia</p>
         <p class="muted">Calihue 20, Tandil</p>
         <div class="btns">
-          <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Casamiento%20Mili%20y%20Pablo%20%C2%B7%20Fiesta&amp;dates=20270207T000000Z%2F20270207T070000Z&amp;location=Espacio%20Provincia%2C%20Calihue%2020%2C%20Tandil&amp;details=Fiesta%20del%20casamiento%20de%20Mili%20y%20Pablo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 6.5h12M5 1.5v3M11 1.5v3"/></svg>Agendar</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Casamiento%20Mili%20y%20Pablo%20%C2%B7%20Fiesta&amp;dates=20270206T223000Z%2F20270207T070000Z&amp;location=Espacio%20Provincia%2C%20Calihue%2020%2C%20Tandil&amp;details=Fiesta%20del%20casamiento%20de%20Mili%20y%20Pablo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 6.5h12M5 1.5v3M11 1.5v3"/></svg>Agendar</a>
           <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/3kDkTK1UCiHaPwfW8"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 14.5s5-4.6 5-8.5a5 5 0 0 0-10 0c0 3.9 5 8.5 5 8.5z"/><circle cx="8" cy="6" r="1.8"/></svg>¿Cómo llegar?</a>
         </div>
       </div>
@@ -288,6 +283,7 @@ textarea{min-height:76px;resize:vertical}
   <section aria-labelledby="dc-t">
     <p class="eyebrow" id="dc-t">Dress code</p>
     <p class="dress">Elegante formal</p>
+    <p class="muted">Evitar colores claros y pasteles</p>
   </section>
 
 
@@ -327,21 +323,6 @@ textarea{min-height:76px;resize:vertical}
       <p id="rsvp-ok-txt">Recibimos tu respuesta.</p>
       <button type="button" class="btn" id="rsvp-edit">Modificar respuesta</button>
     </div>
-  </section>
-
-  <section id="musica" aria-labelledby="mu-t">
-    <svg class="music-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 36V10l20-4v26"/><circle cx="13" cy="36" r="5"/><circle cx="33" cy="32" r="5"/><path d="M18 17l20-4"/></svg>
-    <h2 id="mu-t">¿Qué canción no puede faltar?</h2>
-    <p class="muted">Ayudanos a armar la playlist de la fiesta.</p>
-    <form class="song-form" id="song-form" novalidate>
-      <div class="song-row">
-        <div><label for="song">Canción</label><input type="text" id="song" maxlength="120" placeholder="Nombre de la canción"></div>
-        <div><label for="artist">Artista</label><input type="text" id="artist" maxlength="120" placeholder="Quién la canta"></div>
-      </div>
-      <p class="err" id="song-err" hidden></p>
-      <p class="song-ok" id="song-ok" hidden>¡Anotada! Si querés, sugerí otra.</p>
-      <div class="send"><button type="submit" class="btn primary" id="song-btn">Sugerir canción</button></div>
-    </form>
   </section>
 
   <section aria-labelledby="gift-t">
@@ -387,7 +368,7 @@ textarea{min-height:76px;resize:vertical}
    API_URL: la URL de la "Aplicación web" de Apps Script (termina en /exec).
    Ver LEEME.md, paso 3. */
 const API_URL = "https://script.google.com/macros/s/AKfycbzLomOdb9vWjM1FYA3ctaAgqiNpckHY2uxhxfzwxhIHVLkO59tPrkwxr0pLl0QOjClzEA/exec";
-const FECHA_CEREMONIA = new Date("2027-02-06T19:00:00-03:00");
+const FECHA_CEREMONIA = new Date("2027-02-06T18:30:00-03:00");
 // Video de YouTube que suena de fondo (lo que va después de "watch?v=")
 const YOUTUBE_ID = "gZYtes1RO_w"; // Nat King Cole - L-O-V-E
 /* ================================================= */
@@ -562,23 +543,6 @@ $("rsvp-form").addEventListener("submit", async e => {
 });
 $("rsvp-edit").addEventListener("click", () => {
   armarFormulario(); $("rsvp-ok").hidden = true; $("rsvp-form").hidden = false;
-});
-
-/* ===== Canciones ===== */
-$("song-form").addEventListener("submit", async e => {
-  e.preventDefault();
-  const err = $("song-err"), ok = $("song-ok"); err.hidden = true; ok.hidden = true;
-  const cancion = $("song").value.trim(), artista = $("artist").value.trim();
-  if (!cancion){ err.textContent = "Escribí el nombre de la canción."; err.hidden = false; return; }
-  if (!apiLista){ err.textContent = "Las sugerencias todavía no están conectadas a la planilla."; err.hidden = false; return; }
-  const btn = $("song-btn"); btn.disabled = true; btn.textContent = "Enviando…";
-  try {
-    const res = await apiPost({ action: "cancion", clave, cancion, artista });
-    if (!res.ok) throw new Error(res.error);
-    $("song").value = ""; $("artist").value = ""; ok.hidden = false;
-  } catch (e2) {
-    err.textContent = "No se pudo enviar. Probá de nuevo en un momento."; err.hidden = false;
-  } finally { btn.disabled = false; btn.textContent = "Sugerir canción"; }
 });
 
 cargarInvitacion();

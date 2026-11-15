@@ -3,7 +3,7 @@
 Hay dos partes:
 
 - **El sitio** (`index.html`, `foto1.jpg`), que se publica gratis en GitHub Pages.
-- **La planilla de Google** con el script `apps-script/Code.gs`. Es donde cargás los invitados y donde caen las confirmaciones y las canciones.
+- **La planilla de Google** con el script `apps-script/Code.gs`. Es donde cargás los invitados y donde caen las confirmaciones.
 
 Seguí los pasos en orden. Lleva unos 15 minutos.
 
@@ -63,7 +63,7 @@ Si agregás invitados más adelante, volvé a usar "2. Generar links". A los que
 
 - **Invitados:** el estado de cada grupo (Pendiente, Confirmado, Confirmado parcial o No va), cuántos van ("2 de 3") y sus restricciones alimentarias.
 - **Confirmaciones:** el historial de cada respuesta. Si un grupo modifica su confirmación, aparece una fila nueva y el estado en *Invitados* se actualiza.
-- **Canciones:** las sugerencias, con el grupo que las mandó.
+- **Canciones:** ya no se usa (la sección de sugerencias se sacó de la invitación).
 
 ## Música
 
@@ -77,5 +77,5 @@ La música sale de un video de YouTube que suena de fondo, oculto. Es "L-O-V-E" 
 ## Probar antes de mandar
 
 1. Cargá un grupo de prueba con tu nombre, generá su link y abrilo desde el celu.
-2. Confirmá, sugerí una canción y fijate que aparezcan en la planilla.
+2. Confirmá y fijate que aparezca en la planilla.
 3. Después borrá esas filas.
